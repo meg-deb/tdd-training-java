@@ -26,6 +26,9 @@ public class FizzBuzz {
             if(number % 3 == 0){
                 result.add("Fizz");
             }
+            else if(number % 5 == 0){
+                result.add("Buzz");
+            }
             else {
                 result.add(stringNumber);
             }
