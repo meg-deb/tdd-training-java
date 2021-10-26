@@ -1,28 +1,28 @@
-
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class FizzBuzz {
 
     public List<String> fizzBuzz() {
-        List<String> result = new java.util.ArrayList<>();
 
-        for(int x = 0; x < 100; x++){
-            int number = x + 1;
-            String stringNumber = String.valueOf(number);
-            if(number % 15 == 0){
-                result.add("FizzBuzz");
-            }
-            else if(number % 3 == 0){
-                result.add("Fizz");
-            }
-            else if(number % 5 == 0){
-                result.add("Buzz");
-            }
-            else {
-                result.add(stringNumber);
-            }
-        }
-
-        return result;
+        return IntStream.range(1, 100).boxed()
+                .map(number -> {
+                    if (number % 15 == 0) {
+                        return "FizzBuzz";
+                    } else if (number % 3 == 0) {
+                        return "Fizz";
+                    } else if (number % 5 == 0) {
+                        return "Buzz";
+                    } else {
+                        return String.valueOf(number);
+                    }
+                }).collect(Collectors.toList());
     }
 }
+
+//1 while loop
+//2 for //2* for over list
+//3 forEach
+//4 iterator
+//5 streams API
