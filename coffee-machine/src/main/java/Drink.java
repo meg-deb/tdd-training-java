@@ -8,7 +8,6 @@ public abstract class Drink {
         this.sugar = sugar;
         this.stick = stick;
     }
-    public abstract double getPrice();
 
     @Override
     public boolean equals(Object o) {
