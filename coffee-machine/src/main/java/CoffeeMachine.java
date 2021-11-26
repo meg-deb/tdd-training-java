@@ -15,28 +15,28 @@ public class CoffeeMachine {
                 "Number 3: Coffee - 0,6 euro.\n\n" +
                 "Please give credit for drink:");
 
-        String userCredit = scannerForInput.nextLine();
+        int userCredit = Integer.parseInt(scannerForInput.nextLine());
         System.out.println("Thank you. Your credit is: " + userCredit + "\u20ac\n");
 
         System.out.println("Please choose number of your drink:");
         int userDrinkNumber = Integer.parseInt(scannerForInput.nextLine());
 
-        DrinkName userDrink;
+        DrinkName drinkToMake;
         if (userDrinkNumber == 1) {
-            userDrink = TEA;
+            drinkToMake = TEA;
         } else if (userDrinkNumber == 2) {
-            userDrink = HOT_CHOCOLATE;
+            drinkToMake = HOT_CHOCOLATE;
         }  else if (userDrinkNumber == 3) {
-            userDrink = COFFEE;
+            drinkToMake = COFFEE;
         } else {
             System.out.println("Invalid number chosen.");
             return;
         }
-        System.out.println("Thank you. Drink you chose is: " + userDrink);
+        System.out.println("Thank you. Drink you chose is: " + drinkToMake);
 
 //        drinkToMake = user chooses what drink to do
 //
-//        isDrinMakerDoDrink? = creditChecker(money, drinkToMake)
+//        isDrinkMakerDoDrink? = creditChecker(money, drinkToMake)
 //                if yes :
 //        drink = drinkMaker("T:1:0");
     }
