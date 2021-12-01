@@ -11,13 +11,21 @@ public class UserInputParser{
         this.scanner = scanner;
     }
 
-    public DrinkName getDrinkType() {
+    public double getCredit() {
         System.out.println("Welcome to Coffee Machine!\n" +
                 "Available drinks:\n" +
-                "Number 1: Tea - 0,4 euro,\n" +
-                "Number 2: Hot chocolate - 0,5 euro,\n" +
-                "Number 3: Coffee - 0,6 euro.\n\n" +
-                "Please choose number of your drink:");
+                "Number 1: Tea - 0.4 euro,\n" +
+                "Number 2: Hot chocolate - 0.5 euro,\n" +
+                "Number 3: Coffee - 0.6 euro.\n\n" +
+                "Please give credit for drink:");
+
+        double userCredit = scanner.nextDouble();
+        System.out.println("Thank you. Your credit is: " + userCredit + "\u20ac\n");
+        return userCredit;
+    }
+
+    public DrinkName getDrinkType() {
+        System.out.println("Please choose number of your drink:");
         int userDrinkNumber = scanner.nextInt();
 
         DrinkName drinkToMake;
