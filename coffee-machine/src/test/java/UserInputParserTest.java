@@ -11,7 +11,7 @@ class UserInputParserTest {
     public void shouldReturnInt1AsCreditWhenUserInput1(){
         String userInput = "1";
         UserInputParser testee = new UserInputParser(new Scanner(userInput));
-        int expectedCredit = 1;
+        double expectedCredit = 1.0;
 
         double credit = testee.getCredit();
 
