@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-public class CoffeeMachineUITest {
+public class CommunicatorWithTheUserTest {
     @Disabled
     @Test
     public void shouldPrintMessageToUser() {

@@ -28,6 +28,28 @@ class CoffeeMachineServiceTest {
     }
 
     @Test
+    public void shouldReturnMessageWhenNotEnoughCreditForTea(){
+        double userCredit = 0;
+        DrinkName userDrink = DrinkName.TEA;
+        UserInputParser mockedUserInputParser = mock(UserInputParser.class);
+        when(mockedUserInputParser.getCredit()).thenReturn(userCredit);
+        when(mockedUserInputParser.getDrinkType()).thenReturn(userDrink);
+
+        CreditChecker mockedCreditChecker = mock(CreditChecker.class);
+        when(mockedCreditChecker.isEnoughMoneyForDrink(userCredit, userDrink)).thenReturn(false);
+
+        DrinkMaker mockedDrinkMaker = mock(DrinkMaker.class);
+        CoffeeMachineService testee = new CoffeeMachineService(mockedUserInputParser, mockedCreditChecker, mockedDrinkMaker);
+
+        testee.run();
+
+        verify(mockedUserInputParser).getCredit();
+        verify(mockedUserInputParser).getDrinkType();
+        verify(mockedCreditChecker).isEnoughMoneyForDrink(userCredit, userDrink);
+        verify(mockedDrinkMaker).make("M:Not enough money for drink.");
+    }
+
+    @Test
     public void shouldRunAndMakeChocolate(){
         double userCredit = 0.9;
         DrinkName userDrink = DrinkName.HOT_CHOCOLATE;

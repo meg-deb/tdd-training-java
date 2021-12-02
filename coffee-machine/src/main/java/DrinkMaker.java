@@ -1,8 +1,8 @@
 public class DrinkMaker {
-    CoffeeMachineUI coffeeMachineUI;
+    CommunicatorWithTheUser communicatorWithTheUser;
 
-    public DrinkMaker(CoffeeMachineUI coffeeMachineUI){
-        this.coffeeMachineUI = coffeeMachineUI;
+    public DrinkMaker(CommunicatorWithTheUser communicatorWithTheUser){
+        this.communicatorWithTheUser = communicatorWithTheUser;
     }
 
     public Drink make(String command) {
@@ -12,7 +12,7 @@ public class DrinkMaker {
         String[] order = command.split(":");
 
         if(order[0].equals("M")){
-            coffeeMachineUI.printMessage(command.substring(2));
+            communicatorWithTheUser.printMessage(command.substring(2));
             return null;
         }
 

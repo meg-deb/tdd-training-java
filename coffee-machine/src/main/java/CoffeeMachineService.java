@@ -27,5 +27,8 @@ public class CoffeeMachineService {
                 drinkMaker.make("C::");
             }
         }
+        else {
+            drinkMaker.make("M:Not enough money for drink.");
+        }
     }
 }

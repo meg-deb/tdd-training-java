@@ -5,13 +5,13 @@ import org.mockito.Mockito;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class DrinkMakerTest {
-    CoffeeMachineUI mockedCoffeeMachineUI;
+    CommunicatorWithTheUser mockedCommunicatorWithTheUser;
     DrinkMaker testDrinkMaker;
 
     @BeforeEach
     private void beforeEach() {
-        mockedCoffeeMachineUI = Mockito.mock(CoffeeMachineUI.class);
-        testDrinkMaker = new DrinkMaker(mockedCoffeeMachineUI);
+        mockedCommunicatorWithTheUser = Mockito.mock(CommunicatorWithTheUser.class);
+        testDrinkMaker = new DrinkMaker(mockedCommunicatorWithTheUser);
     }
 
     @Test
@@ -80,7 +80,7 @@ public class DrinkMakerTest {
 
         Drink result = testDrinkMaker.make(order);
 
-        Mockito.verify(mockedCoffeeMachineUI).printMessage("test");
+        Mockito.verify(mockedCommunicatorWithTheUser).printMessage("test");
 
         assertThat(result).isEqualTo(null);
     }
