@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 import static models.DrinkName.*;
 
-public class UserInputParser{
+public class UserInputService {
     private final Scanner scanner;
 
-    public UserInputParser(Scanner scanner){
+    public UserInputService(Scanner scanner){
         this.scanner = scanner;
     }
+    //TODO private methods
 
     public double getCredit() {
         System.out.println("Welcome to Coffee Machine!\n" +
